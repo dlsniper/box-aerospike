@@ -5,3 +5,12 @@ build :
         name : install aerospike
         code : |
           ./aerospike.sh
+    - script:
+        name : testing installation
+        code : |
+          echo 'Testing that the installation works'
+          /opt/aerospike/bin/cli -h 127.0.0.1 -p 3000 -n test -o set -k Aerospike -b name -v "Aerospike, Inc."
+          /opt/aerospike/bin/cli -h 127.0.0.1 -p 3000 -n test -o set -k Aerospike -b address -v "Mountain View, CA 94043"
+          /opt/aerospike/bin/cli -h 127.0.0.1 -p 3000 -n test -o set -k Aerospike -b email -v "info@aerospike.com"
+          /opt/aerospike/bin/cli -h 127.0.0.1 -p 3000 -n test -o get -k Aerospike
+          /opt/aerospike/bin/cli -h 127.0.0.1 -p 3000 -n test -o delete -k Aerospike
