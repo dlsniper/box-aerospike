@@ -11,3 +11,6 @@ sudo ./asinstall
 
 echo 'Starting Aerospike'
 sudo service aerospike start
+
+echo 'Give Aerospike time to start'
+sleep 3
