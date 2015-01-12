@@ -1,0 +1,20 @@
+name: aerospike
+version: 0.0.1
+inherits: wercker/ubuntu12.04-webessentials@0.0.3
+type: service
+platform: ubuntu@12.04
+description: wercker box for aerospike, an open source, NoSQL, key-value store & more
+keywords:
+  - aerospike
+  - opensource
+  - noqsql
+  - database
+packages:
+  - aerospike@3.4.0
+script: |
+  sudo ./aerospike.sh
+env:
+  WERCKER_AEROSPIKE_PORT: 3000
+  WERCKER_AEROSPIKE_HOST: $$HOST$$
+  WERCKER_AEROSPIKE_URL: $$HOST$$:3000
+  WERCKER_AEROSPIKE_VERSION: "3.4.0"
