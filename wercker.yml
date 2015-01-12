@@ -4,4 +4,4 @@ build :
     - script:
         name : install aerospike
         code : |
-          sudo ./aerospike.sh
+          ./aerospike.sh
